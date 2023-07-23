@@ -1,0 +1,16 @@
+{
+    "name": "dized/module-core",
+    "description": "DiZed Team Core module for the Magento 2 project",
+    "version": "1.0.0",
+    "type": "magento2-module",
+    "homepage": "https://github.com/di-zed/m2-core",
+    "license": "MIT",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "DiZed\\Core\\": ""
+        }
+    }
+}
