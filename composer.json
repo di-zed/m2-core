@@ -1,7 +1,7 @@
 {
     "name": "dized/module-core",
     "description": "DiZed Team Core module for the Magento 2 project",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "keywords": ["dized", "core", "module", "magento"],
     "type": "magento2-module",
     "license": "MIT",

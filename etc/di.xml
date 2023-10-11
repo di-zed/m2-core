@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author DiZed Team
+ * @copyright Copyright (c) DiZed Team (https://github.com/di-zed/)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Add custom logger: -->
+    <virtualType name="dizedLogger" type="Magento\Framework\Logger\Monolog">
+        <arguments>
+            <argument name="handlers"  xsi:type="array">
+                <item name="debug" xsi:type="object">DiZed\Core\Logger\Handler\Debug</item>
+                <item name="error" xsi:type="object">DiZed\Core\Logger\Handler\Error</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="dizedLoggerContext" type="Magento\Framework\App\Helper\Context">
+        <arguments>
+            <argument name="logger" xsi:type="object">dizedLogger</argument>
+        </arguments>
+    </virtualType>
+    <type name="DiZed\Core\Helper\CoreHelper">
+        <arguments>
+            <argument name="context" xsi:type="object">dizedLoggerContext</argument>
+        </arguments>
+    </type>
+</config>
